@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "moneyback-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "moneyback", "database_id": "REPLACE_AFTER_wrangler_d1_create", "migrations_dir": "migrations" }
+  ],
+  "r2_buckets": [{ "binding": "DOCS", "bucket_name": "moneyback-docs" }],
+  "vars": { "APP_ENV": "dev" }
+}

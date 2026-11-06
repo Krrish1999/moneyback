@@ -1,0 +1,27 @@
+{
+  "name": "@moneyback/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "@moneyback/prompts": "workspace:*",
+    "@moneyback/rules": "workspace:*",
+    "@moneyback/shared": "workspace:*",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.13.16",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.6.0",
+    "@cloudflare/workers-types": "^5.20261106.1",
+    "drizzle-kit": "^0.31.11",
+    "wrangler": "^4.158.0"
+  }
+}
