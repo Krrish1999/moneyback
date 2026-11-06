@@ -1,0 +1,7 @@
+SAMPLE HEART CARE CENTRE, LUCKNOW (fictional)
+DISCHARGE SUMMARY
+Name: Dev Examplesingh   Age: 47 M
+DOA: 02/01/2026   DOD: 08/01/2026
+Diagnosis: Acute anterior wall myocardial infarction
+History: Hypertensive for 6 years on Tab. Amlodipine 5 mg. Ex-smoker.
+Procedure: PTCA with drug eluting stent to LAD on 02/01/2026.

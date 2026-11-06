@@ -1,0 +1,12 @@
+EXAMPLE CITY HOSPITAL, PUNE (fictional)
+DISCHARGE SUMMARY
+
+Patient       : Asha Testkumar      Age/Sex: 52/F
+IP No.        : ECH-IP-55501
+Date of admission : 10-Feb-2026
+Date of discharge : 14-Feb-2026
+
+Final diagnosis: Acute calculous cholecystitis
+Past history: Known case of Type 2 Diabetes Mellitus for 3 years, on oral medication.
+Procedure: Laparoscopic cholecystectomy done on 11-Feb-2026 under GA.
+Condition at discharge: Stable.

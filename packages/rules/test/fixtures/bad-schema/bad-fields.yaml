@@ -1,0 +1,11 @@
+id: bad-fields
+title: Missing source and bad values
+summary: This rule is missing its source URL and has invalid values.
+applies_to: [insurer_always_wins]
+forum: consumer_court
+type: duty
+source_title: "Something"
+source_reference: "x"
+issuing_body: "IRDAI"
+date_checked: 06/11/2026
+status: final

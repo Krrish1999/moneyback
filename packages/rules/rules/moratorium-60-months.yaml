@@ -1,0 +1,23 @@
+id: moratorium-60-months
+title: After 60 months of continuous cover, claims cannot be contested for non-disclosure except fraud
+summary: >-
+  Once a health policy has been in force continuously for 60 months (the moratorium period), the insurer cannot
+  contest the policy or a claim on the ground of non-disclosure or misrepresentation, except where fraud is
+  established. Continuous cover from ported or migrated policies counts toward the 60 months.
+applies_to: [non_disclosure, pre_existing_disease]
+forum: any
+type: right
+parameters:
+  moratorium:
+    value: 60
+    unit: months
+    counted_from: start of continuous coverage (including ported or migrated policy credits)
+source_reference: "Chapter I, para 13 (Moratorium Period)"
+notes: >-
+  Text read from a mirror copy (caalley.com) because the official file URL could not be fetched (URL too long for the fetch tool); confirm the paragraph against the official PDF at source_url. Circular reference read as IRDAI/HLT/CIR/PRO/84/5/2024; confirm. Whether this also limits pre-existing-disease exclusions (as opposed to non-disclosure) should be
+  confirmed from the exact wording before relying on it for the pre_existing_disease reason code.
+source_url: "https://irdai.gov.in/documents/37343/991022/%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A5%8D%E0%A4%AF+%E0%A4%AC%E0%A5%80%E0%A4%AE%E0%A4%BE+%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF+%E0%A4%AA%E0%A4%B0+%E0%A4%AE%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%B0+%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0-%E0%A4%85%E0%A4%82%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%9C%E0%A5%80+_+Master+Circular+on+Health+Insurance+Business+-English.pdf/08a32828-dc1d-116f-0549-6db86d448651?version=1.0&t=1719833433399&download=true"
+source_title: "IRDAI Master Circular on Health Insurance Business, 29.05.2024"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

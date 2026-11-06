@@ -10,6 +10,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
+    "@moneyback/shared": "workspace:*",
     "zod": "^4.6.7"
   }
 }

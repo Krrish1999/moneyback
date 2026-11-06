@@ -1,0 +1,21 @@
+DEMO HEALTH INSURANCE COMPANY LTD. (fictional)
+CASHLESS AUTHORISATION - DENIAL
+
+Date                : 16-Jun-2026
+Hospital            : Placeholder Eye Institute, Jaipur
+Patient             : Meena Placeholder (spouse)
+Policy number       : DEMO-FF-2025-000042
+Pre-auth / claim ref: DEMO-PA-778812
+Diagnosis           : Immature senile cataract, left eye
+Proposed procedure  : Phacoemulsification with IOL, left eye
+Planned admission   : 18-Jun-2026
+
+Amount requested : Rs 65,000
+Amount approved  : Nil
+Amount denied    : Rs 65,000
+
+Reason for denial: Cataract is subject to a 24 month waiting period as per Section C,
+Clause 2.2 (Excl02) of the policy. The policy has completed only 9 months of continuous
+coverage, hence the cashless request is denied.
+
+Denial of cashless does not mean denial of treatment. You may submit a reimbursement claim.

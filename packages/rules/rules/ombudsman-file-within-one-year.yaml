@@ -1,0 +1,29 @@
+id: ombudsman-file-within-one-year
+title: File with the Ombudsman within one year
+summary: >-
+  A complaint to the Insurance Ombudsman must be made within one year of receiving the insurer's rejection or its
+  reply you are not satisfied with, or, if the insurer never replied, within one year after the one-month reply
+  period ended.
+applies_to: [all]
+forum: insurance_ombudsman
+type: time_limit
+parameters:
+  filing_window:
+    value: 1
+    unit: years
+    counted_from: >-
+      receipt of the insurer's rejection or unsatisfactory reply, or expiry of one month after the representation if
+      there was no reply
+deadline:
+  role: filing_window
+  to: insurance_ombudsman
+  parameter: filing_window
+source_reference: "Rule 14(3)(b)(i)-(iii)"
+notes: >-
+  Rule 14(4) reportedly lets the Ombudsman condone delay; that wording was not checked closely and is not encoded.
+  "One year" becomes 365 days in toDeadlineConfig (rounded down for filing windows).
+source_url: "https://www.cioins.co.in/notification/Insurance%20Ombudsman%20Rules,%202017(%20as%20amended%20till%2009.11.2023).pdf"
+source_title: "The Insurance Ombudsman Rules, 2017 (as amended till 09.11.2023), consolidated text published by the Council for Insurance Ombudsmen"
+issuing_body: "Ministry of Finance, Department of Financial Services (Government of India)"
+date_checked: 2026-11-06
+status: draft

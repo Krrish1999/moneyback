@@ -1,0 +1,27 @@
+id: ombudsman-award-and-compliance-timelines
+title: The Ombudsman decides in three months and the insurer must comply in 30 days
+summary: >-
+  The Ombudsman should pass an award within three months of receiving everything it needs from you. The insurer must
+  comply with the award within thirty days of receiving it and tell the Ombudsman that it has complied.
+applies_to: [all]
+forum: insurance_ombudsman
+type: right
+parameters:
+  award_within:
+    value: 3
+    unit: months
+    counted_from: receipt of all requirements from the complainant
+  insurer_compliance_within:
+    value: 30
+    unit: days
+    counted_from: the insurer's receipt of the award
+source_reference: "Rule 17(4) and Rule 17(6)"
+notes: >-
+  Mediation route (Rule 16) has different timelines (recommendation in one month, complainant acceptance in 15 days,
+  insurer compliance in 15 days); not encoded here. The IRDAI health master circular (Chapter I para 20) reportedly
+  adds a Rs 5,000 per day penalty for not honouring an award within 30 days; not verified closely, not encoded.
+source_url: "https://www.cioins.co.in/notification/Insurance%20Ombudsman%20Rules,%202017(%20as%20amended%20till%2009.11.2023).pdf"
+source_title: "The Insurance Ombudsman Rules, 2017 (as amended till 09.11.2023), consolidated text published by the Council for Insurance Ombudsmen"
+issuing_body: "Ministry of Finance, Department of Financial Services (Government of India)"
+date_checked: 2026-11-06
+status: draft

@@ -1,0 +1,19 @@
+id: no-rejection-for-want-of-documents
+title: A claim cannot be rejected or closed just for missing documents or late intimation
+summary: >-
+  An insurer should not reject or close a health claim only because documents are missing or the claim was
+  intimated late. For health claims, the insurer or TPA is to collect the required documents from the hospital; the
+  policyholder is not required to submit them.
+applies_to: [documents_missing, late_intimation]
+forum: any
+type: right
+source_reference: "Part B (Health): 'At the time of claim' para 1(ii); claim settlement provisions on collection of documents from hospitals"
+notes: >-
+  Text read from a mirror copy (caalley.com) because the official IRDAI page blocks automated fetching; paragraph numbering in the mirror text was inconsistent, so confirm the exact paragraph against the official circular at source_url. The Health master circular (Chapter I para 17(c)) also says insurers and TPAs shall collect the required
+  documents from hospitals and the policyholder shall not be required to submit them. Check the exact scope
+  (cashless vs reimbursement) before relying on the document-collection part.
+source_url: "https://irdai.gov.in/document-detail?documentId=5625747"
+source_title: "IRDAI Master Circular on Protection of Policyholders' Interests, 2024 (IRDAI/PP&GR/CIR/MISC/117/9/2024, 05.09.2024)"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

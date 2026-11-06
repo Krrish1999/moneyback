@@ -8,7 +8,9 @@
     "deploy": "wrangler deploy",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "types": "wrangler types"
+    "types": "wrangler types",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply moneyback --local"
   },
   "dependencies": {
     "@moneyback/prompts": "workspace:*",

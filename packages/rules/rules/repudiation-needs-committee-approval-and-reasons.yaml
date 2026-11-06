@@ -1,0 +1,18 @@
+id: repudiation-needs-committee-approval-and-reasons
+title: A claim may be rejected only with committee approval, and the reasons must cite the policy terms
+summary: >-
+  A health insurer may not reject a claim without the approval of its claims review committee (the PMC or a
+  three-member sub-group of it). When a claim is rejected or only partly paid, the insurer must tell the claimant the
+  full details, referring to the specific policy terms and conditions.
+applies_to: [all]
+forum: insurer_gro
+type: duty
+source_reference: "Chapter I, para 17(a) and para 17(b); Chapter II A.I(4)(b) (Claims Review Committee)"
+notes: >-
+  Text read from a mirror copy (caalley.com) because the official file URL could not be fetched (URL too long for the fetch tool); confirm the paragraph against the official PDF at source_url. Circular reference read as IRDAI/HLT/CIR/PRO/84/5/2024; confirm. The PPHI master circular 2024 (Part B) has a similar requirement to give full details with reference to
+  the policy terms.
+source_url: "https://irdai.gov.in/documents/37343/991022/%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A5%8D%E0%A4%AF+%E0%A4%AC%E0%A5%80%E0%A4%AE%E0%A4%BE+%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF+%E0%A4%AA%E0%A4%B0+%E0%A4%AE%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%B0+%E0%A4%AA%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A4%A4%E0%A5%8D%E0%A4%B0-%E0%A4%85%E0%A4%82%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%9C%E0%A5%80+_+Master+Circular+on+Health+Insurance+Business+-English.pdf/08a32828-dc1d-116f-0549-6db86d448651?version=1.0&t=1719833433399&download=true"
+source_title: "IRDAI Master Circular on Health Insurance Business, 29.05.2024"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

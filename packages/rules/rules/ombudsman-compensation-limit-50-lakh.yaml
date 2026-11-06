@@ -1,0 +1,19 @@
+id: ombudsman-compensation-limit-50-lakh
+title: The Ombudsman can award up to Rs 50 lakh
+summary: >-
+  The Insurance Ombudsman cannot award more than the loss you actually suffered, and not more than Rs 50 lakh in
+  total, including expenses. Larger claims need a different forum.
+applies_to: [all]
+forum: insurance_ombudsman
+type: eligibility
+parameters:
+  max_award:
+    value: 500000000
+    unit: paise
+source_reference: "Rule 17(3)(i) and Rule 17(3)(ii) (limit raised to fifty lakh by the 2023 amendment)"
+notes: Rs 50,00,000 = 500000000 paise.
+source_url: "https://www.cioins.co.in/notification/Insurance%20Ombudsman%20Rules,%202017(%20as%20amended%20till%2009.11.2023).pdf"
+source_title: "The Insurance Ombudsman Rules, 2017 (as amended till 09.11.2023), consolidated text published by the Council for Insurance Ombudsmen"
+issuing_body: "Ministry of Finance, Department of Financial Services (Government of India)"
+date_checked: 2026-11-06
+status: draft

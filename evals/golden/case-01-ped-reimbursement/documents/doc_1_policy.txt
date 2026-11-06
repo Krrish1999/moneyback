@@ -1,0 +1,16 @@
+SAMPLE GENERAL INSURANCE CO. LTD.
+(Fictional insurer - synthetic test document)
+
+HEALTH GUARD INDIVIDUAL POLICY - POLICY SCHEDULE
+
+Policy No.          : SMPL-HI-0000001
+Policy type         : Individual
+Insured person      : Asha Testkumar (age 52)
+Sum insured         : Rs 5,00,000
+Period of insurance : 01/04/2025 to 31/03/2026
+First inception     : 01/04/2025
+
+Section 4 - Exclusions
+Clause 4.1 Pre-Existing Diseases (Code Excl01): Expenses related to the treatment of a
+pre-existing disease (PED) and its direct complications shall be excluded until the expiry
+of 36 months of continuous coverage after the date of inception of the first policy.

@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/*
+ * Calm, trustworthy palette: deep teal on a warm paper background.
+ * Contrast (WCAG): ink on paper ≈ 15:1, muted on paper ≈ 7:1, white on brand ≈ 7.6:1.
+ */
+@theme {
+  --color-paper: #f7f5f0;
+  --color-card: #ffffff;
+  --color-ink: #1b2a2f;
+  --color-muted: #48565c;
+  --color-line: #d9d4c9;
+  --color-brand: #0d5c55;
+  --color-brand-dark: #08443f;
+  --color-brand-soft: #e3efec;
+  --color-focus: #b45309;
+  --color-danger: #a12a1f;
+  --color-danger-soft: #fbeceb;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Devanagari", sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 100%; /* 16px; respects the user's browser setting */
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+  :lang(hi) body,
+  body:lang(hi) {
+    line-height: 1.75; /* Devanagari needs more room for matras */
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,23 @@
+id: insurer-grievance-resolution-14-days
+title: The insurer should resolve your complaint within 14 days
+summary: >-
+  An insurer should resolve a policyholder's complaint within 14 days and give reasons, with reference to the policy
+  terms, if it does not accept the complaint. Its resolution letter must include the details of the Insurance
+  Ombudsman.
+applies_to: [all]
+forum: insurer_gro
+type: duty
+parameters:
+  resolution_within:
+    value: 14
+    unit: days
+source_reference: "Part B (Health), Section VI Complaints Mechanism: turnaround time para 2(i); Ombudsman details para 3(iii)"
+notes: >-
+  Text read from a mirror copy (caalley.com) because the official IRDAI page blocks automated fetching; paragraph numbering in the mirror text was inconsistent, so confirm the exact paragraph against the official circular at source_url. The point from which the 14 days are counted was not confirmed word for word.
+  The Health master circular (Chapter I para 19) also requires the insurer's grievance reply to include the contact
+  details of the concerned ombudsman.
+source_url: "https://irdai.gov.in/document-detail?documentId=5625747"
+source_title: "IRDAI Master Circular on Protection of Policyholders' Interests, 2024 (IRDAI/PP&GR/CIR/MISC/117/9/2024, 05.09.2024)"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

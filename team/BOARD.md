@@ -7,14 +7,14 @@ Status: `todo` · `doing` · `blocked` · `review` · `done`. Update only rows y
 | ID | Task | Owner | Status | Depends on | Done when |
 | --- | --- | --- | --- | --- | --- |
 | W1-01 | Monorepo scaffold, team operating system | product-manager | done | — | `pnpm typecheck` and `pnpm test` pass; CLAUDE.md, agents, board exist |
-| W1-02 | Case state machine + Zod schemas for case, document, letter, event, payment in `packages/shared` | backend-engineer | todo | W1-01 | Allowed transitions encoded and unit-tested; every illegal transition rejected |
-| W1-03 | D1 schema (Drizzle) + first migration + `POST /cases`, `GET /cases/:id` with Workers integration tests | backend-engineer | todo | W1-02 | Integration tests run against local D1; inputs validated with Zod |
-| W1-04 | Deadline engine: given forum, dates and rule config, return next forum, earliest and latest filing dates | backend-engineer | todo | W1-02 | Pure functions; 100% branch coverage; no hard-coded legal numbers (all from config) |
-| W1-05 | Rules library: Zod schema, YAML loader, validation tests, first draft rules for health-claim rejections with official source links | ai-engineer | todo | W1-01 | Every rule has source URL, date checked, `status: draft`; loader rejects malformed rules |
-| W1-06 | Extraction prompt + output schema for claim documents (no live API calls in tests) | ai-engineer | todo | W1-02 | Zod schema for extracted facts; prompt versioned; a mock-model test proves parsing and validation |
-| W1-07 | Web app shell: routes, English + Hindi strings, mobile-first screens (home, new case, upload, case timeline) on mock data, PWA manifest | frontend-engineer | todo | W1-01 | `pnpm --filter @moneyback/web build` passes; screens usable at 360 px width |
-| W1-08 | Golden case format + 5 synthetic cases + eval runner that scores extraction from recorded outputs | qa-engineer | todo | W1-06 | `pnpm eval` prints a per-field score report; no real personal data in repo |
-| W1-09 | GitHub Actions CI (typecheck, test, build) + Playwright smoke test of the web shell | qa-engineer | todo | W1-07 | Workflow file valid; `pnpm e2e` passes locally against the dev server |
+| W1-02 | Case state machine + Zod schemas for case, document, letter, event, payment in `packages/shared` | backend-engineer | review | W1-01 | Allowed transitions encoded and unit-tested; every illegal transition rejected |
+| W1-03 | D1 schema (Drizzle) + first migration + `POST /cases`, `GET /cases/:id` with Workers integration tests | backend-engineer | review | W1-02 | Integration tests run against local D1; inputs validated with Zod |
+| W1-04 | Deadline engine: given forum, dates and rule config, return next forum, earliest and latest filing dates | backend-engineer | review | W1-02 | Pure functions; 100% branch coverage; no hard-coded legal numbers (all from config) |
+| W1-05 | Rules library: Zod schema, YAML loader, validation tests, first draft rules for health-claim rejections with official source links | ai-engineer | review | W1-01 | Every rule has source URL, date checked, `status: draft`; loader rejects malformed rules |
+| W1-06 | Extraction prompt + output schema for claim documents (no live API calls in tests) | ai-engineer | review | W1-02 | Zod schema for extracted facts; prompt versioned; a mock-model test proves parsing and validation |
+| W1-07 | Web app shell: routes, English + Hindi strings, mobile-first screens (home, new case, upload, case timeline) on mock data, PWA manifest | frontend-engineer | review | W1-01 | `pnpm --filter @moneyback/web build` passes; screens usable at 360 px width |
+| W1-08 | Golden case format + 5 synthetic cases + eval runner that scores extraction from recorded outputs | qa-engineer | review | W1-06 | `pnpm eval` prints a per-field score report; no real personal data in repo |
+| W1-09 | GitHub Actions CI (typecheck, test, build) + Playwright smoke test of the web shell | qa-engineer | review | W1-07 | Workflow file valid; `pnpm e2e` passes locally against the dev server |
 | W1-10 | Security and legal review of sprint 1 | security-legal-reviewer | todo | W1-02..09 | Report in `team/reviews/`; founder items filed in FOUNDER_INBOX |
 
 ## Backlog — weeks 2–8 (PM refines at the start of each sprint)

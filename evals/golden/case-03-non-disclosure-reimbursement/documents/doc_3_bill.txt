@@ -1,0 +1,8 @@
+SAMPLE HEART CARE CENTRE, LUCKNOW (fictional)
+FINAL BILL
+Room and nursing        Rs  42,000.00
+Cath lab and procedure  Rs 1,65,000.00
+Stent (implant)         Rs  38,000.00
+Pharmacy                Rs  61,430.50
+Investigations          Rs  35,750.00
+GRAND TOTAL             Rs 3,42,180.50

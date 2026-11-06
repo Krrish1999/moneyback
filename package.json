@@ -9,7 +9,7 @@
     "dev:web": "pnpm --filter @moneyback/web dev",
     "dev:api": "pnpm --filter @moneyback/api dev",
     "typecheck": "pnpm -r --if-present typecheck",
-    "test": "pnpm -r --if-present test",
+    "test": "pnpm -r --filter '!@moneyback/e2e' --if-present test",
     "lint": "pnpm -r --if-present lint",
     "eval": "pnpm --filter @moneyback/evals eval",
     "e2e": "pnpm --filter @moneyback/e2e test"

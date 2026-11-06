@@ -1,0 +1,94 @@
+{
+  "insurer_name": {
+    "value": "Sample General Insurance Co. Ltd.",
+    "confidence": 0.93,
+    "source_document": "doc_1"
+  },
+  "policy_number": {
+    "value": "SMPL-HI-0000001",
+    "confidence": 0.93,
+    "source_document": "doc_1"
+  },
+  "policy_type": {
+    "value": "individual",
+    "confidence": 0.93,
+    "source_document": "doc_1"
+  },
+  "sum_insured": {
+    "value": 50000000,
+    "confidence": 0.93,
+    "source_document": "doc_1"
+  },
+  "policy_start_date": {
+    "value": "2025-04-01",
+    "confidence": 0.93,
+    "source_document": "doc_1"
+  },
+  "claim_number": {
+    "value": "SMPL-CLM-1001",
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "claim_type": {
+    "value": "reimbursement",
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "hospital_name": {
+    "value": "EXAMPLE CITY HOSPITAL, PUNE",
+    "confidence": 0.93,
+    "source_document": "doc_2"
+  },
+  "admission_date": {
+    "value": "2026-02-10",
+    "confidence": 0.93,
+    "source_document": "doc_2"
+  },
+  "discharge_date": {
+    "value": "2026-02-14",
+    "confidence": 0.93,
+    "source_document": "doc_2"
+  },
+  "diagnosis": {
+    "value": "Acute calculous cholecystitis",
+    "confidence": 0.93,
+    "source_document": "doc_2"
+  },
+  "amount_claimed": {
+    "value": 18450000,
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "amount_paid": {
+    "value": 0,
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "amount_disallowed": {
+    "value": 18450000,
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "rejection_letter_date": {
+    "value": "2026-03-05",
+    "confidence": 0.93,
+    "source_document": "doc_4"
+  },
+  "rejection_reasons": [
+    {
+      "quote": "The claim stands repudiated as the present ailment is a complication of a pre-existing disease (Type 2 Diabetes Mellitus) which existed prior to the inception of the policy",
+      "code": "pre_existing_disease",
+      "amount_disallowed": 18450000,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    }
+  ],
+  "policy_clauses_cited": [
+    {
+      "clause": "clause 4.1 (Excl01)",
+      "text": "Pre-Existing Diseases",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    }
+  ]
+}

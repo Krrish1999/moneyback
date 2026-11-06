@@ -1,0 +1,138 @@
+{
+  "id": "case-01-ped-reimbursement",
+  "synthetic": true,
+  "schema_version": 1,
+  "title": "Pre-existing disease repudiation, reimbursement, full rejection",
+  "rejection_codes": [
+    "pre_existing_disease"
+  ],
+  "claim_type": "reimbursement",
+  "outcome": "rejected",
+  "notes": "Clean extraction. Recorded output differs only in case/formatting, which normalised matching must accept.",
+  "documents": [
+    {
+      "id": "doc_1",
+      "type": "policy",
+      "title": "Policy schedule",
+      "file": "documents/doc_1_policy.txt"
+    },
+    {
+      "id": "doc_2",
+      "type": "discharge_summary",
+      "title": "Discharge summary",
+      "file": "documents/doc_2_discharge_summary.txt"
+    },
+    {
+      "id": "doc_3",
+      "type": "bill",
+      "title": "Final hospital bill",
+      "file": "documents/doc_3_bill.txt"
+    },
+    {
+      "id": "doc_4",
+      "type": "rejection_letter",
+      "title": "Claim repudiation letter",
+      "file": "documents/doc_4_rejection_letter.txt"
+    }
+  ],
+  "recorded_output": {
+    "file": "recorded-output.json",
+    "model": "synthetic-fixture",
+    "prompt_version": null,
+    "recorded_at": "2026-11-06"
+  },
+  "expected": {
+    "insurer_name": {
+      "value": "Sample General Insurance Co. Ltd.",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_number": {
+      "value": "SMPL-HI-0000001",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_type": {
+      "value": "individual",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "sum_insured": {
+      "value": 50000000,
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_start_date": {
+      "value": "2025-04-01",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "claim_number": {
+      "value": "SMPL-CLM-1001",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "claim_type": {
+      "value": "reimbursement",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "hospital_name": {
+      "value": "Example City Hospital, Pune",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "admission_date": {
+      "value": "2026-02-10",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "discharge_date": {
+      "value": "2026-02-14",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "diagnosis": {
+      "value": "Acute calculous cholecystitis",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "amount_claimed": {
+      "value": 18450000,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "amount_paid": {
+      "value": 0,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "amount_disallowed": {
+      "value": 18450000,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "rejection_letter_date": {
+      "value": "2026-03-05",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "rejection_reasons": [
+      {
+        "quote": "The claim stands repudiated as the present ailment is a complication of a pre-existing disease (Type 2 Diabetes Mellitus) which existed prior to the inception of the policy",
+        "code": "pre_existing_disease",
+        "amount_disallowed": 18450000,
+        "confidence": 1.0,
+        "source_document": "doc_4"
+      }
+    ],
+    "policy_clauses_cited": [
+      {
+        "clause": "Clause 4.1 (Excl01)",
+        "text": "Pre-Existing Diseases",
+        "confidence": 1.0,
+        "source_document": "doc_4"
+      }
+    ]
+  }
+}

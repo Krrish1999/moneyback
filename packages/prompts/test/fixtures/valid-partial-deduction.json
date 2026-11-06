@@ -1,0 +1,36 @@
+{
+  "insurer_name": { "value": "Example General Insurance Co. Ltd.", "confidence": 0.98, "source_document": "doc_1" },
+  "policy_number": { "value": "EGI/HL/2025/000123", "confidence": 0.97, "source_document": "doc_1" },
+  "policy_type": { "value": "family_floater", "confidence": 0.9, "source_document": "doc_2" },
+  "sum_insured": { "value": 50000000, "confidence": 0.95, "source_document": "doc_2" },
+  "policy_start_date": { "value": "2024-04-01", "confidence": 0.9, "source_document": "doc_2" },
+  "claim_number": { "value": "CLM-998877", "confidence": 0.99, "source_document": "doc_1" },
+  "claim_type": { "value": "reimbursement", "confidence": 0.85, "source_document": "doc_1" },
+  "hospital_name": { "value": "Sample Multispeciality Hospital, Pune", "confidence": 0.95, "source_document": "doc_3" },
+  "admission_date": { "value": "2026-03-05", "confidence": 0.9, "source_document": "doc_3" },
+  "discharge_date": { "value": "2026-03-09", "confidence": 0.9, "source_document": "doc_3" },
+  "diagnosis": { "value": "Acute calculous cholecystitis", "confidence": 0.9, "source_document": "doc_3" },
+  "amount_claimed": { "value": 18500000, "confidence": 0.95, "source_document": "doc_1" },
+  "amount_paid": { "value": 12000000, "confidence": 0.95, "source_document": "doc_1" },
+  "amount_disallowed": { "value": 6500000, "confidence": 0.95, "source_document": "doc_1" },
+  "rejection_letter_date": { "value": "2026-04-02", "confidence": 0.95, "source_document": "doc_1" },
+  "rejection_reasons": [
+    {
+      "quote": "Proportionate deduction applied as room rent opted exceeds eligible limit of 1% of sum insured per day.",
+      "code": "room_rent_cap_proportionate_deduction",
+      "amount_disallowed": 5200000,
+      "confidence": 0.9,
+      "source_document": "doc_1"
+    },
+    {
+      "quote": "Non-payable items (consumables) deducted as per policy.",
+      "code": "consumables_not_payable",
+      "amount_disallowed": 1300000,
+      "confidence": 0.85,
+      "source_document": "doc_1"
+    }
+  ],
+  "policy_clauses_cited": [
+    { "clause": "Section C, Clause 1.2 (Room rent limit)", "text": null, "confidence": 0.8, "source_document": "doc_1" }
+  ]
+}

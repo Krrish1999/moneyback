@@ -1,0 +1,13 @@
+SAMPLE GENERAL INSURANCE CO. LTD. (fictional)
+Date: 20 February 2026
+
+Claim No: SMPL-CLM-2207    Policy No: SMPL-HI-0000037
+Claim type: Reimbursement   Claimed amount: Rs 3,42,180.50
+
+Dear Mr Examplesingh,
+On scrutiny of the hospital records it is observed that the insured is a known case of
+hypertension for 6 years, i.e. prior to inception of the policy. This material fact was not
+disclosed in the proposal form. Hence the claim is rejected under Clause 6.1 (Disclosure of
+information) of the policy.
+
+Amount approved: Rs 0

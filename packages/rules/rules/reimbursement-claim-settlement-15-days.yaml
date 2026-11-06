@@ -1,0 +1,26 @@
+id: reimbursement-claim-settlement-15-days
+title: Reimbursement claims should be settled within 15 days, with interest for delay
+summary: >-
+  A health insurer should settle a claim (other than a cashless claim) within fifteen days of the claim being
+  submitted. If it is late, the claimant is entitled to interest at 2 percent above the bank rate, which the insurer
+  should pay on its own.
+applies_to: [all]
+forum: insurer_gro
+type: time_limit
+parameters:
+  settle_within:
+    value: 15
+    unit: days
+    counted_from: submission of claim
+  delay_interest_above_bank_rate:
+    value: 2
+    unit: percent
+source_reference: "Part B (Health): Settlement of claims para 6; interest for delay in 'Processing of claim' para 2"
+notes: >-
+  Text read from a mirror copy (caalley.com) because the official IRDAI page blocks automated fetching; paragraph numbering in the mirror text was inconsistent, so confirm the exact paragraph against the official circular at source_url. The starting point for interest was read as "from the date of receipt of intimation"; confirm exact
+  wording. This is the insurer's duty, not an escalation wait, so it does not feed the deadline engine.
+source_url: "https://irdai.gov.in/document-detail?documentId=5625747"
+source_title: "IRDAI Master Circular on Protection of Policyholders' Interests, 2024 (IRDAI/PP&GR/CIR/MISC/117/9/2024, 05.09.2024)"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

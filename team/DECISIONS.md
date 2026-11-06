@@ -23,3 +23,10 @@ rule config in the rules library, so they are unit-testable.
 ## D-005 · Rules start as drafts · accepted · 2026-11-06 · founder
 Agents may add rules only with `status: draft`. A rule becomes `verified` only after Kunal (or a reviewing advocate)
 checks the source. Production drafting may cite only `verified` rules.
+
+## D-006 · Escalation path: insurer → ombudsman, Bima Bharosa in parallel · proposed · 2026-11-06 · product-manager
+Context: the AI engineer found the ombudsman's one-year clock runs from the complaint to the insurer, and Bima Bharosa is
+not a required step before the ombudsman (Insurance Ombudsman Rules 2017, r.14(3)). No sourced waiting period exists
+between Bima Bharosa and the ombudsman. Proposal: the deadline engine's forum order is insurer_gro → insurance_ombudsman;
+Bima Bharosa is offered as an optional parallel complaint after 14 days, not a gate. Needs founder confirmation (F-005)
+because it changes what the Rs 499 escalation pack contains.

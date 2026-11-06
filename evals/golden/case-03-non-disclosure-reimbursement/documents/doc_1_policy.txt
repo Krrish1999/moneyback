@@ -1,0 +1,11 @@
+SAMPLE GENERAL INSURANCE CO. LTD. (fictional insurer - synthetic test document)
+HEALTH GUARD INDIVIDUAL POLICY - POLICY SCHEDULE
+
+Policy No.     : SMPL-HI-0000037
+Policy type    : Individual
+Insured        : Dev Examplesingh (age 47)
+Sum insured    : Rs 7,50,000
+Inception date : 15/11/2024
+
+Clause 6.1 Disclosure of information: The policy shall be void and all premium paid forfeited
+in the event of misrepresentation, mis-description or non-disclosure of any material fact.

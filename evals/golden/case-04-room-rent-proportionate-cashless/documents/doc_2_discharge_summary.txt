@@ -1,0 +1,7 @@
+DEMO MULTISPECIALITY HOSPITAL, BENGALURU (fictional)
+DISCHARGE SUMMARY
+Patient: Farah Sampleton, 34 F
+Admitted: 03-Mar-2026   Discharged: 07-Mar-2026
+Diagnosis: Closed fracture shaft of right femur
+Procedure: Closed reduction and internal fixation with intramedullary nail (04-Mar-2026)
+Room category: Single private room (Rs 6,000 per day)

@@ -61,7 +61,7 @@ pnpm test               # all unit + integration tests
 pnpm dev:api            # API on http://localhost:8787
 pnpm dev:web            # web app on http://localhost:5173
 pnpm eval               # AI evaluation against evals/golden
-pnpm e2e                # Playwright (needs dev:web running)
+pnpm e2e                # Playwright (builds and serves the web app itself)
 ```
 
 ## Engineering rules

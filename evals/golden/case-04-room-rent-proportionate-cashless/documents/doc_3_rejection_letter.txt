@@ -1,0 +1,14 @@
+EXAMPLE HEALTH INSURANCE LTD. (fictional)
+CASHLESS CLAIM - FINAL SETTLEMENT LETTER
+Date: 09-Mar-2026
+Claim no.: EXH-CL-55120     Policy: EXH-GMC-000913
+Hospital: Demo Multispeciality Hospital, Bengaluru
+
+Total bill amount      : Rs 2,40,000
+Amount approved        : Rs 1,64,200
+Amount disallowed      : Rs 75,800
+
+Deduction details:
+1. Rs 72,000 - Proportionate deduction applied as the insured stayed in a room with rent of
+   Rs 6,000 per day against eligible room rent of Rs 3,000 per day (Clause 3.4).
+2. Rs 3,800 - Non-payable consumables (gloves, masks, kits) as per Clause 7.2.

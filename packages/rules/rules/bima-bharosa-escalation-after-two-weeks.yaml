@@ -1,0 +1,31 @@
+id: bima-bharosa-escalation-after-two-weeks
+title: Escalate to IRDAI (Bima Bharosa) if the insurer does not resolve your complaint in two weeks
+summary: >-
+  Complain first to the insurer's grievance redressal officer. If the complaint is not resolved within two weeks, or
+  you are unhappy with the insurer's resolution, you can take it to IRDAI through the Bima Bharosa portal, by email,
+  by phone (toll-free 155255) or by post.
+applies_to: [all]
+forum: insurer_gro
+type: time_limit
+parameters:
+  wait_for_insurer:
+    value: 14
+    unit: days
+    counted_from: the complaint to the insurer
+deadline:
+  role: wait_before_escalation
+  from: insurer_gro
+  to: bima_bharosa
+  parameter: wait_for_insurer
+  escalate_early_on_reply: true
+source_reference: "Bima Bharosa FAQ/Help page: what to do if the insurer does not resolve the complaint"
+notes: >-
+  The FAQ says "2 weeks" (stored as 14 days) in one place and "within 15 days of its receipt" in another; the
+  portal banner says complaints are attended to within 14 days; the PPHI master circular says 14 days. Reviewer to
+  decide which governs. This is IRDAI guidance on a web page, not a regulation; no time limit for filing on Bima
+  Bharosa was found.
+source_url: "https://bimabharosa.irdai.gov.in/Home/FAQ"
+source_title: "Bima Bharosa (IRDAI) FAQ / Help"
+issuing_body: "IRDAI"
+date_checked: 2026-11-06
+status: draft

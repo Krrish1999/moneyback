@@ -1,0 +1,19 @@
+SAMPLE GENERAL INSURANCE CO. LTD. (fictional)
+Claims Department
+
+Date: 05/03/2026
+To: Asha Testkumar
+
+Sub: Repudiation of claim no. SMPL-CLM-1001 under policy no. SMPL-HI-0000001
+
+Dear Customer,
+We have reviewed your reimbursement claim for Rs 1,84,500 towards hospitalisation at
+Example City Hospital, Pune from 10/02/2026 to 14/02/2026.
+
+The claim stands repudiated as the present ailment is a complication of a pre-existing disease
+(Type 2 Diabetes Mellitus) which existed prior to the inception of the policy, and is excluded
+under Clause 4.1 (Excl01) of the policy terms and conditions.
+
+Amount claimed: Rs 1,84,500   Amount payable: Nil
+
+If you are not satisfied, you may write to our Grievance Redressal Officer.

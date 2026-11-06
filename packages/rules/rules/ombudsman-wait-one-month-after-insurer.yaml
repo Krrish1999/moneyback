@@ -1,0 +1,28 @@
+id: ombudsman-wait-one-month-after-insurer
+title: Wait one month for the insurer's reply, unless it replies or rejects first
+summary: >-
+  After you send a written complaint to the insurer, you may go to the Insurance Ombudsman once one month has passed
+  with no reply. If the insurer rejects your complaint or gives a reply you are not satisfied with before then, you
+  may go to the Ombudsman straight away.
+applies_to: [all]
+forum: insurer_gro
+type: time_limit
+parameters:
+  wait_for_insurer_reply:
+    value: 1
+    unit: months
+    counted_from: the date of the written representation to the insurer
+deadline:
+  role: wait_before_escalation
+  from: insurer_gro
+  to: insurance_ombudsman
+  parameter: wait_for_insurer_reply
+  escalate_early_on_reply: true
+source_reference: "Rule 14(3)(a)(i)-(iii) and Rule 14(3)(b)(iii)"
+notes: >-
+  The rule says "one month", not 30 days. toDeadlineConfig converts it conservatively to 31 days for the wait.
+source_url: "https://www.cioins.co.in/notification/Insurance%20Ombudsman%20Rules,%202017(%20as%20amended%20till%2009.11.2023).pdf"
+source_title: "The Insurance Ombudsman Rules, 2017 (as amended till 09.11.2023), consolidated text published by the Council for Insurance Ombudsmen"
+issuing_body: "Ministry of Finance, Department of Financial Services (Government of India)"
+date_checked: 2026-11-06
+status: draft

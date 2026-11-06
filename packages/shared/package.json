@@ -7,9 +7,14 @@
   "types": "src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "5.1.0",
+    "vitest": "5.1.0"
   }
 }

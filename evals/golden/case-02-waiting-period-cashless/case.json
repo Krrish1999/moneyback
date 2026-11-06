@@ -1,0 +1,126 @@
+{
+  "id": "case-02-waiting-period-cashless",
+  "synthetic": true,
+  "schema_version": 1,
+  "title": "Specific-disease waiting period, cashless pre-authorisation denied",
+  "rejection_codes": [
+    "waiting_period"
+  ],
+  "claim_type": "cashless",
+  "outcome": "rejected",
+  "notes": "No discharge yet (pre-auth stage): discharge_date must be null. Recorded output is correct.",
+  "documents": [
+    {
+      "id": "doc_1",
+      "type": "policy",
+      "title": "Policy schedule",
+      "file": "documents/doc_1_policy.txt"
+    },
+    {
+      "id": "doc_2",
+      "type": "rejection_letter",
+      "title": "Cashless pre-authorisation denial",
+      "file": "documents/doc_2_rejection_letter.txt"
+    }
+  ],
+  "recorded_output": {
+    "file": "recorded-output.json",
+    "model": "synthetic-fixture",
+    "prompt_version": null,
+    "recorded_at": "2026-11-06"
+  },
+  "expected": {
+    "insurer_name": {
+      "value": "Demo Health Insurance Company Ltd.",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_number": {
+      "value": "DEMO-FF-2025-000042",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_type": {
+      "value": "family_floater",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "sum_insured": {
+      "value": 100000000,
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_start_date": {
+      "value": "2025-09-01",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "claim_number": {
+      "value": "DEMO-PA-778812",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "claim_type": {
+      "value": "cashless",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "hospital_name": {
+      "value": "Placeholder Eye Institute, Jaipur",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "admission_date": {
+      "value": "2026-06-18",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "discharge_date": {
+      "value": null,
+      "confidence": 0.0,
+      "source_document": null
+    },
+    "diagnosis": {
+      "value": "Immature senile cataract, left eye",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "amount_claimed": {
+      "value": 6500000,
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "amount_paid": {
+      "value": 0,
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "amount_disallowed": {
+      "value": 6500000,
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "rejection_letter_date": {
+      "value": "2026-06-16",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "rejection_reasons": [
+      {
+        "quote": "Cataract is subject to a 24 month waiting period as per Section C, Clause 2.2 (Excl02) of the policy.",
+        "code": "waiting_period",
+        "amount_disallowed": 6500000,
+        "confidence": 1.0,
+        "source_document": "doc_2"
+      }
+    ],
+    "policy_clauses_cited": [
+      {
+        "clause": "Section C, Clause 2.2 (Excl02)",
+        "text": null,
+        "confidence": 1.0,
+        "source_document": "doc_2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+EXAMPLE HEALTH INSURANCE LTD. (fictional insurer - synthetic test document)
+GROUP MEDICLAIM - MEMBER CERTIFICATE
+
+Master policy no. : EXH-GMC-000913
+Policy type       : Group (employer: Placeholder Software Pvt Ltd, fictional)
+Member            : Farah Sampleton
+Sum insured       : Rs 3,00,000
+Member cover from : 01-07-2025
+
+Clause 3.4 Room rent limit: Room rent is payable up to 1% of the sum insured per day. If the
+insured opts for a room above the limit, all associated medical expenses shall be payable in
+the same proportion as the eligible room rent bears to the actual room rent.
+Clause 7.2 Non-payable items: Consumables listed in Annexure II are not payable.

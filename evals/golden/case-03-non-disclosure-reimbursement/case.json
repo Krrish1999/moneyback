@@ -1,0 +1,138 @@
+{
+  "id": "case-03-non-disclosure-reimbursement",
+  "synthetic": true,
+  "schema_version": 1,
+  "title": "Non-disclosure of hypertension, reimbursement, full rejection",
+  "rejection_codes": [
+    "non_disclosure"
+  ],
+  "claim_type": "reimbursement",
+  "outcome": "rejected",
+  "notes": "DELIBERATELY IMPERFECT recorded output: amount_claimed loses the 50 paise (34218000 vs 34218050) and admission_date is read as MM/DD (2026-02-01 vs 2026-01-02). amount_disallowed is not stated anywhere, so null is correct.",
+  "documents": [
+    {
+      "id": "doc_1",
+      "type": "policy",
+      "title": "Policy schedule",
+      "file": "documents/doc_1_policy.txt"
+    },
+    {
+      "id": "doc_2",
+      "type": "discharge_summary",
+      "title": "Discharge summary",
+      "file": "documents/doc_2_discharge_summary.txt"
+    },
+    {
+      "id": "doc_3",
+      "type": "bill",
+      "title": "Final bill",
+      "file": "documents/doc_3_bill.txt"
+    },
+    {
+      "id": "doc_4",
+      "type": "rejection_letter",
+      "title": "Claim rejection letter",
+      "file": "documents/doc_4_rejection_letter.txt"
+    }
+  ],
+  "recorded_output": {
+    "file": "recorded-output.json",
+    "model": "synthetic-fixture",
+    "prompt_version": null,
+    "recorded_at": "2026-11-06"
+  },
+  "expected": {
+    "insurer_name": {
+      "value": "Sample General Insurance Co. Ltd.",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_number": {
+      "value": "SMPL-HI-0000037",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_type": {
+      "value": "individual",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "sum_insured": {
+      "value": 75000000,
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "policy_start_date": {
+      "value": "2024-11-15",
+      "confidence": 1.0,
+      "source_document": "doc_1"
+    },
+    "claim_number": {
+      "value": "SMPL-CLM-2207",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "claim_type": {
+      "value": "reimbursement",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "hospital_name": {
+      "value": "Sample Heart Care Centre, Lucknow",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "admission_date": {
+      "value": "2026-01-02",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "discharge_date": {
+      "value": "2026-01-08",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "diagnosis": {
+      "value": "Acute anterior wall myocardial infarction",
+      "confidence": 1.0,
+      "source_document": "doc_2"
+    },
+    "amount_claimed": {
+      "value": 34218050,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "amount_paid": {
+      "value": 0,
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "amount_disallowed": {
+      "value": null,
+      "confidence": 0.0,
+      "source_document": null
+    },
+    "rejection_letter_date": {
+      "value": "2026-02-20",
+      "confidence": 1.0,
+      "source_document": "doc_4"
+    },
+    "rejection_reasons": [
+      {
+        "quote": "This material fact was not disclosed in the proposal form.",
+        "code": "non_disclosure",
+        "amount_disallowed": null,
+        "confidence": 1.0,
+        "source_document": "doc_4"
+      }
+    ],
+    "policy_clauses_cited": [
+      {
+        "clause": "Clause 6.1",
+        "text": "Disclosure of information",
+        "confidence": 1.0,
+        "source_document": "doc_4"
+      }
+    ]
+  }
+}

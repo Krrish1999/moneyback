@@ -1,0 +1,10 @@
+EXAMPLE CITY HOSPITAL, PUNE (fictional)
+FINAL BILL - IP No. ECH-IP-55501
+
+Room charges (4 days)          Rs  16,000.00
+Surgeon and anaesthetist fees  Rs  62,000.00
+OT charges                     Rs  38,500.00
+Pharmacy and consumables       Rs  41,200.00
+Investigations                 Rs  26,800.00
+-----------------------------------------------
+TOTAL                          Rs 1,84,500.00

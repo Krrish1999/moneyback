@@ -1,0 +1,107 @@
+{
+  "insurer_name": {
+    "value": "Example Health Insurance Ltd.",
+    "confidence": 1.0,
+    "source_document": "doc_1"
+  },
+  "policy_number": {
+    "value": "EXH-GMC-000913",
+    "confidence": 1.0,
+    "source_document": "doc_1"
+  },
+  "policy_type": {
+    "value": "group",
+    "confidence": 1.0,
+    "source_document": "doc_1"
+  },
+  "sum_insured": {
+    "value": 30000000,
+    "confidence": 1.0,
+    "source_document": "doc_1"
+  },
+  "policy_start_date": {
+    "value": "2025-07-01",
+    "confidence": 1.0,
+    "source_document": "doc_1"
+  },
+  "claim_number": {
+    "value": "EXH-CL-55120",
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "claim_type": {
+    "value": "cashless",
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "hospital_name": {
+    "value": "Demo Multispeciality Hospital, Bengaluru",
+    "confidence": 1.0,
+    "source_document": "doc_2"
+  },
+  "admission_date": {
+    "value": "2026-03-03",
+    "confidence": 1.0,
+    "source_document": "doc_2"
+  },
+  "discharge_date": {
+    "value": "2026-03-07",
+    "confidence": 1.0,
+    "source_document": "doc_2"
+  },
+  "diagnosis": {
+    "value": "Closed fracture shaft of right femur",
+    "confidence": 1.0,
+    "source_document": "doc_2"
+  },
+  "amount_claimed": {
+    "value": 24000000,
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "amount_paid": {
+    "value": 16420000,
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "amount_disallowed": {
+    "value": 7580000,
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "rejection_letter_date": {
+    "value": "2026-03-09",
+    "confidence": 1.0,
+    "source_document": "doc_3"
+  },
+  "rejection_reasons": [
+    {
+      "quote": "Proportionate deduction applied as the insured stayed in a room with rent of Rs 6,000 per day against eligible room rent of Rs 3,000 per day (Clause 3.4).",
+      "code": "room_rent_cap_proportionate_deduction",
+      "amount_disallowed": 7200000,
+      "confidence": 1.0,
+      "source_document": "doc_3"
+    },
+    {
+      "quote": "Non-payable consumables (gloves, masks, kits) as per Clause 7.2.",
+      "code": "other",
+      "amount_disallowed": 380000,
+      "confidence": 0.55,
+      "source_document": "doc_3"
+    }
+  ],
+  "policy_clauses_cited": [
+    {
+      "clause": "Clause 3.4",
+      "text": null,
+      "confidence": 1.0,
+      "source_document": "doc_3"
+    },
+    {
+      "clause": "Clause 7.2",
+      "text": null,
+      "confidence": 1.0,
+      "source_document": "doc_3"
+    }
+  ]
+}

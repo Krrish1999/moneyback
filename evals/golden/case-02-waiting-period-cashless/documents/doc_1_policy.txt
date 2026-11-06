@@ -1,0 +1,13 @@
+DEMO HEALTH INSURANCE COMPANY LTD. (fictional insurer - synthetic test document)
+FAMILY SHIELD FLOATER - SCHEDULE
+
+Policy number   : DEMO-FF-2025-000042
+Plan            : Family Floater (Self, Spouse)
+Proposer        : Ravi Placeholder
+Sum insured     : Rs 10,00,000 (floater)
+Policy start    : 01-Sep-2025
+
+Section C - Waiting periods
+2.2 Specified disease/procedure waiting period (Code Excl02): Expenses for the listed
+conditions, including cataract, are not covered until 24 months of continuous coverage
+have elapsed since the inception of the first policy.

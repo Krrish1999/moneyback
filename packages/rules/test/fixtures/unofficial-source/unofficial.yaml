@@ -1,0 +1,20 @@
+id: unofficial
+title: Sample rule for tests
+summary: A sample rule used only by the loader tests, not a real legal rule.
+applies_to: [all]
+forum: insurance_ombudsman
+type: time_limit
+parameters:
+  window:
+    value: 1
+    unit: years
+deadline:
+  role: filing_window
+  to: insurance_ombudsman
+  parameter: window
+source_url: "https://www.some-insurance-blog.com/post"
+source_title: "Example source"
+source_reference: "Rule 1"
+issuing_body: "Example body"
+date_checked: 2026-11-06
+status: draft

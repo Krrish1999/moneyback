@@ -1,0 +1,18 @@
+SAMPLE GENERAL INSURANCE CO. LTD. (fictional insurer - synthetic test document)
+Date: 28/07/2026
+
+Claim No.  : SMPL-CLM-3390
+Policy No. : SMPL-HI-0000085
+Patient    : Kiran Demoverma
+Hospital   : Testnagar Nursing Home, Indore
+Period     : 21/06/2026 to 24/06/2026
+Claim type : Reimbursement
+Amount claimed: Rs 58,760
+
+Dear Customer,
+We had requested the following documents on 02/07/2026 and 14/07/2026:
+ - Original pharmacy bills with prescriptions
+ - Investigation reports (blood culture, ultrasound abdomen)
+As these documents have not been received despite two reminders, the claim is closed for
+want of documents as per Clause 5.4 (Claim documents) of the policy.
+You may reopen the claim by submitting the documents.
