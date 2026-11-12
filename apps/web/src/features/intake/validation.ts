@@ -1,5 +1,5 @@
 import { CaseCategory } from "@moneyback/shared";
-import { ClaimType, DEV_USER_ID, type CreateCaseBody, type IntakeExtras } from "../../api/types";
+import { ClaimType, type CreateCaseBody, type IntakeExtras } from "../../api/types";
 import { parseRupeesToPaise } from "../../lib/money";
 
 export const STATEMENT_MAX_LENGTH = 2000;
@@ -61,7 +61,6 @@ export function validateIntake(values: IntakeFormValues, today: string): IntakeR
   return {
     ok: true,
     request: {
-      userId: DEV_USER_ID, // TODO(B-01): comes from the session once sign-in exists.
       category: CaseCategory.enum.health_insurance,
       insurer: insurerName,
       claimAmountPaise: paise,

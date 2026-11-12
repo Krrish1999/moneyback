@@ -1,4 +1,4 @@
-import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { index, integer, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { CaseCategory, CaseStatus, DocumentType, FeeKind, Forum, Verdict } from "@moneyback/shared";
 import { EventActor, EventType, LetterStatus, PaymentStatus } from "@moneyback/shared";
 
@@ -22,8 +22,49 @@ export const users = sqliteTable("users", {
   phone: text("phone").unique(),
   email: text("email").unique(),
   name: text("name"),
+  /** Google account id (the ID token's `sub`). Users are created only by sign-in. */
+  googleSub: text("google_sub").unique(),
   ...timestamps,
 });
+
+/** Login sessions. `id` is the SHA-256 of the cookie token, so a database leak does not leak usable tokens. */
+export const sessions = sqliteTable(
+  "sessions",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    expiresAt: text("expires_at").notNull(),
+    createdAt: text("created_at").notNull(),
+  },
+  (t) => [index("sessions_user_id_idx").on(t.userId), index("sessions_expires_at_idx").on(t.expiresAt)],
+);
+
+/** Which version of the consent text a user agreed to, and when. Rows are never updated. */
+export const consents = sqliteTable(
+  "consents",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    version: text("version").notNull(),
+    acceptedAt: text("accepted_at").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.version] })],
+);
+
+/** Fixed-window request counters. `key` holds a user id or a hashed IP, never a raw IP. */
+export const rateLimits = sqliteTable(
+  "rate_limits",
+  {
+    key: text("key").notNull(),
+    /** Start of the window, in Unix seconds. */
+    windowStart: integer("window_start").notNull(),
+    count: integer("count").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.key, t.windowStart] })],
+);
 
 export const cases = sqliteTable(
   "cases",

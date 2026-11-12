@@ -6,7 +6,7 @@ import { RouterProvider } from "react-router/dom";
 import { I18nextProvider } from "react-i18next";
 import { ApiProvider } from "../src/api/context";
 import { createMockApi } from "../src/api/mock";
-import { DEV_USER_ID, type MoneyBackApi } from "../src/api/types";
+import { type MoneyBackApi } from "../src/api/types";
 import { CreateCaseInput } from "@moneyback/shared";
 import { buildTimeline } from "../src/pages/CasePage";
 import { intakeExtrasStore } from "../src/features/intake/extrasStore";
@@ -29,7 +29,6 @@ describe("validateIntake", () => {
     expect(result).toEqual({
       ok: true,
       request: {
-        userId: DEV_USER_ID,
         category: "health_insurance",
         insurer: "Star Health",
         claimAmountPaise: 1_20_000_00,
@@ -75,7 +74,7 @@ describe("validateIntake", () => {
   });
 });
 
-function renderAt(path: string, api: MoneyBackApi = createMockApi()) {
+async function renderAt(path: string, api: MoneyBackApi = createMockApi()) {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
   render(
     <I18nextProvider i18n={createI18n("en")}>
@@ -84,6 +83,8 @@ function renderAt(path: string, api: MoneyBackApi = createMockApi()) {
       </ApiProvider>
     </I18nextProvider>,
   );
+  // The mock starts signed in; wait until the app has confirmed that (the sign-out button appears).
+  await screen.findByTestId("sign-out");
   return router;
 }
 
@@ -91,7 +92,7 @@ describe("intake form", () => {
   it("shows errors and does not call the API when submitted empty", async () => {
     const api = createMockApi();
     const createCase = vi.spyOn(api, "createCase");
-    renderAt("/cases/new", api);
+    await renderAt("/cases/new", api);
 
     await userEventLike.click(screen.getByTestId("intake-submit"));
 
@@ -103,7 +104,7 @@ describe("intake form", () => {
   });
 
   it("creates the case and moves to the upload step when valid", async () => {
-    const router = renderAt("/cases/new");
+    const router = await renderAt("/cases/new");
 
     await userEventLike.type(screen.getByLabelText("Insurance company"), "Star Health");
     await userEventLike.click(screen.getByLabelText(/Reimbursement/));
@@ -125,7 +126,7 @@ describe("intake form", () => {
 
 describe("language switch", () => {
   it("switches the whole UI to Hindi", async () => {
-    renderAt("/");
+    await renderAt("/");
     await userEventLike.click(screen.getByTestId("language-switch"));
     expect(await screen.findByTestId("start-case-button")).toHaveTextContent("मुफ़्त केस जाँच शुरू करें");
     expect(document.documentElement.lang).toBe("hi");
@@ -153,7 +154,7 @@ describe("case timeline", () => {
   });
 
   it("renders the demo case with its deadline", async () => {
-    renderAt("/cases/demo");
+    await renderAt("/cases/demo");
     const timeline = await screen.findByTestId("case-timeline");
     expect(timeline.querySelector('[aria-current="step"]')).toHaveTextContent("Waiting for a reply");
     expect(screen.getByTestId("next-deadline")).toHaveTextContent(/^By \d{1,2} \w+ \d{4}$/);

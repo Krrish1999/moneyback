@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { CaseRecord, CreateCaseInput, DocumentRecord, EventRecord, LetterRecord, PaymentRecord } from "../src";
+import {
+  CaseRecord,
+  CreateCaseInput,
+  DocumentRecord,
+  EventRecord,
+  LetterRecord,
+  MAX_CLAIM_AMOUNT_PAISE,
+  PaymentRecord,
+} from "../src";
 
 const T = "2026-11-06T10:00:00.000Z";
 
@@ -80,10 +88,11 @@ const rows: Row[] = [
   ["payment success with mandate", PaymentRecord, { ...validPayment, kind: "success", mandateId: "m1" }, true],
   ["payment bad kind", PaymentRecord, { ...validPayment, kind: "tip" }, false],
   ["payment bad status", PaymentRecord, { ...validPayment, status: "pending" }, false],
-  ["create input valid", CreateCaseInput, { userId: "u1", insurer: "X", claimAmountPaise: 100 }, true],
-  ["create input missing userId", CreateCaseInput, { insurer: "X", claimAmountPaise: 100 }, false],
-  ["create input rupees as float", CreateCaseInput, { userId: "u1", insurer: "X", claimAmountPaise: 99.9 }, false],
-  ["create input bad category", CreateCaseInput, { userId: "u1", insurer: "X", claimAmountPaise: 1, category: "car" }, false],
+  ["create input valid", CreateCaseInput, { insurer: "X", claimAmountPaise: 100 }, true],
+  ["create input at the cap", CreateCaseInput, { insurer: "X", claimAmountPaise: MAX_CLAIM_AMOUNT_PAISE }, true],
+  ["create input over the cap", CreateCaseInput, { insurer: "X", claimAmountPaise: MAX_CLAIM_AMOUNT_PAISE + 1 }, false],
+  ["create input rupees as float", CreateCaseInput, { insurer: "X", claimAmountPaise: 99.9 }, false],
+  ["create input bad category", CreateCaseInput, { insurer: "X", claimAmountPaise: 1, category: "car" }, false],
 ];
 
 describe("record schemas", () => {
@@ -92,11 +101,16 @@ describe("record schemas", () => {
   });
 
   it("CreateCaseInput defaults category and trims insurer", () => {
-    expect(CreateCaseInput.parse({ userId: "u1", insurer: "  X  ", claimAmountPaise: 1 })).toEqual({
-      userId: "u1",
+    expect(CreateCaseInput.parse({ insurer: "  X  ", claimAmountPaise: 1 })).toEqual({
       insurer: "X",
       claimAmountPaise: 1,
       category: "health_insurance",
     });
+  });
+
+  it("CreateCaseInput drops a client-sent userId and status", () => {
+    const parsed = CreateCaseInput.parse({ userId: "someone-else", status: "won", insurer: "X", claimAmountPaise: 1 });
+    expect(parsed).not.toHaveProperty("userId");
+    expect(parsed).not.toHaveProperty("status");
   });
 });

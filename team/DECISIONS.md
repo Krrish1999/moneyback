@@ -30,3 +30,18 @@ not a required step before the ombudsman (Insurance Ombudsman Rules 2017, r.14(3
 between Bima Bharosa and the ombudsman. Proposal: the deadline engine's forum order is insurer_gro → insurance_ombudsman;
 Bima Bharosa is offered as an optional parallel complaint after 14 days, not a gate. Needs founder confirmation (F-005)
 because it changes what the Rs 499 escalation pack contains.
+
+## D-007 · Sign-in with Google for the beta, not phone OTP · proposed · 2026-11-12 · backend-engineer
+Context: B-01 allowed "phone OTP (or Google)". SMS OTP in India needs a provider account and (to our understanding) DLT
+registration of the sender and template, which adds a paid dependency and a delay; almost every Android phone already has a
+Google account. Decision: the beta signs in with Google only (ID token verified by the API, session cookie). Phone OTP can be
+added later behind the same session layer. Consequences: needs a Google OAuth web client id (F-011); users without a Google
+account cannot sign in during the beta.
+
+## D-008 · Uploads go through the API, not R2 signed URLs · proposed · 2026-11-12 · backend-engineer
+Context: B-02 said "R2 signed upload URLs". Signed URLs need R2 S3 access keys (a new secret) and let the browser write to the
+bucket before the API has seen the bytes, so size and file-type checks can only run afterwards. Decision: the browser sends the
+file to `POST /cases/:id/documents`; the Worker checks session, ownership, consent, size (10 MB) and the file's first bytes, then
+writes to R2 through the bucket binding. The bucket has no public or signed access. Consequences: no R2 keys to manage; every
+upload uses Worker CPU and memory (files are read fully into memory, fine at 10 MB); a larger limit later would need streaming
+or signed URLs.

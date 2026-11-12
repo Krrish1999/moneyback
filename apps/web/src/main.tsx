@@ -4,13 +4,15 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import { I18nextProvider } from "react-i18next";
 import { ApiProvider } from "./api/context";
+import { createHttpApi } from "./api/http";
 import { createMockApi } from "./api/mock";
+import { API_URL } from "./config";
 import { createI18n } from "./i18n";
 import { routes } from "./routes";
 import "./index.css";
 
-// Swap for the HTTP client once W1-03 (POST /cases, GET /cases/:id) is available.
-const api = createMockApi({ latencyMs: 200 });
+// With an API address the app talks to apps/api; without one it runs on the in-memory mock (demo, e2e).
+const api = API_URL ? createHttpApi(API_URL) : createMockApi({ latencyMs: 200 });
 const i18n = createI18n();
 const router = createBrowserRouter(routes);
 

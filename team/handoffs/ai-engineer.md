@@ -1,7 +1,16 @@
-# Handoff log — ai-engineer
+﻿# Handoff log — ai-engineer
 
 Newest entry first. Each entry: date, what was done, contract changes, how to verify, needs from others.
 
+## 2026-11-12 · S2-05 parseExtraction hardening → review (done by Claude in Kunal's desktop session)
+- `packages/prompts/src/parse.ts`: every JSON object in the reply is checked against the schema. Exactly one fits → ok.
+  Several different ones fit → new error `kind: "ambiguous"` (never picks one, whichever comes first). The same object
+  repeated word for word counts once. Objects nested inside another JSON object are not candidates.
+- BUG-QA-1 and BUG-QA-2 are fixed inside that rule; `evals/test/parse-extraction-known-bugs.test.ts` now uses `it`.
+- Callers must handle `ambiguous` (retry or human review).
+- Verify: `pnpm --filter @moneyback/prompts test` (27) and `pnpm --filter @moneyback/evals test` (62). `pnpm eval` and the
+  full `pnpm test` were NOT re-run after this change.
+- Not started: S2-06 (field length limits + quote-in-document check), S2-07 (verified-only rules), S2-09 (CI pinning).
 ## 2026-11-06 — W1-06 part 1: extraction output schema published (early note for QA)
 
 - `packages/prompts/src/extraction.ts`, exported from `@moneyback/prompts`:

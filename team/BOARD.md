@@ -8,14 +8,14 @@ Order set by the sprint-1 review (team/reviews/sprint-1.md). Nothing is deployed
 
 | ID | Task | Owner | Status | Depends on | Done when |
 | --- | --- | --- | --- | --- | --- |
-| S2-01 | B-01 login + ownership checks + rate limit; remove userId-from-body and placeholder users (review H-1) | backend-engineer | todo | — | Every case route rejects other users' cases in tests; no route trusts a client-sent user id |
-| S2-02 | Data deletion design + delete endpoint (D1 rows and R2 files) and Aadhaar-number masking helper, moved up from B-15 (H-2) | backend-engineer | todo | S2-01 | Delete removes every row and file for a user in tests; masking unit-tested |
-| S2-03 | Consent + privacy screens wired before upload, text marked pending founder approval (H-2, F-010) | frontend-engineer | todo | — | Upload is unreachable without recorded consent version |
+| S2-01 | B-01 login + ownership checks + rate limit; remove userId-from-body and placeholder users (review H-1) | backend-engineer | review | — | Every case route rejects other users' cases in tests; no route trusts a client-sent user id |
+| S2-02 | Data deletion design + delete endpoint (D1 rows and R2 files) and Aadhaar-number masking helper, moved up from B-15 (H-2) | backend-engineer | review | S2-01 | Delete removes every row and file for a user in tests; masking unit-tested |
+| S2-03 | Consent + privacy screens wired before upload, text marked pending founder approval (H-2, F-010) | frontend-engineer | review | — | Upload is unreachable without recorded consent version |
 | S2-04 | Fee copy rewritten to match D-002 exactly, no outcome promises, footer disclaimers (H-3, M-4) | frontend-engineer | todo | F-008 | Reviewer signs off; founder approves wording |
-| S2-05 | parseExtraction: reject replies with more than one candidate object; fix BUG-QA-1/2 without widening the hole (M-1) | ai-engineer | todo | — | QA's known-bug tests flip to passing; attacker-first-object test rejected |
+| S2-05 | parseExtraction: reject replies with more than one candidate object; fix BUG-QA-1/2 without widening the hole (M-1) | ai-engineer | review | — | QA's known-bug tests flip to passing; attacker-first-object test rejected |
 | S2-06 | Field length limits + runtime check that quotes appear in their cited document (M-2) | ai-engineer | todo | — | Eval and unit tests cover an injected quote |
 | S2-07 | findRules verified-only by default; verified rules require verified_by/on/against; CI check blocks drafts in production (M-3) | ai-engineer, qa-engineer | todo | — | CI fails on a verified rule without evidence |
-| S2-08 | B-02 R2 signed uploads (only after S2-01..S2-03) | backend-engineer | todo | S2-01, S2-03 | Upload limits and type checks tested |
+| S2-08 | B-02 R2 signed uploads (only after S2-01..S2-03) | backend-engineer | review | S2-01, S2-03 | Upload limits and type checks tested |
 | S2-09 | Pin CI actions to commit SHAs; CODEOWNERS on packages/rules (L-5, M-3) | qa-engineer | todo | — | Workflow passes with pinned actions |
 
 ## Sprint 1 — week 1 (9–15 Nov 2026): foundations

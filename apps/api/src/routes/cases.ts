@@ -1,13 +1,26 @@
 import { Hono } from "hono";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { CaseRecord, CreateCaseInput, Id } from "@moneyback/shared";
-import type { Env } from "../env";
+import type { AppEnv } from "../env";
 import { getDb, schema } from "../db/client";
+import { requireSession } from "../auth/session";
+import { allow, ipKey, LIMITS, tooManyRequests } from "../rate-limit";
 
-export const casesRoutes = new Hono<{ Bindings: Env }>();
+export const casesRoutes = new Hono<AppEnv>();
 
-/** Create a case in `intake` status. Body: CreateCaseInput. Returns 201 + CaseRecord. */
+// Every case route needs a signed-in user. The owner always comes from the session, never from the request.
+casesRoutes.use("*", requireSession);
+
+/** Create a case in `intake` status for the signed-in user. Body: CreateCaseInput. Returns 201 + CaseRecord. */
 casesRoutes.post("/", async (c) => {
+  const userId = c.get("userId");
+
+  if (!(await allow(c.env.DB, `cases:user:${userId}`, LIMITS.createCasePerUser))) {
+    return tooManyRequests(c, LIMITS.createCasePerUser);
+  }
+  const key = await ipKey(c, "cases");
+  if (key && !(await allow(c.env.DB, key, LIMITS.createCasePerIp))) return tooManyRequests(c, LIMITS.createCasePerIp);
+
   let body: unknown;
   try {
     body = await c.req.json();
@@ -21,9 +34,7 @@ casesRoutes.post("/", async (c) => {
   const now = new Date().toISOString();
   const record: CaseRecord = {
     id: crypto.randomUUID(),
-    // TODO(B-01, week 2): take the user id from the authenticated session, not the request body,
-    // and drop the placeholder-user insert below. Until then anyone can create a case for any user id.
-    userId: input.userId,
+    userId,
     category: input.category,
     insurer: input.insurer,
     claimAmountPaise: input.claimAmountPaise,
@@ -37,8 +48,6 @@ casesRoutes.post("/", async (c) => {
 
   const db = getDb(c.env.DB);
   await db.batch([
-    // TODO(B-01): placeholder user row so the cases.user_id foreign key holds before sign-up exists.
-    db.insert(schema.users).values({ id: input.userId, createdAt: now, updatedAt: now }).onConflictDoNothing(),
     db.insert(schema.cases).values(record),
     db.insert(schema.events).values({
       id: crypto.randomUUID(),
@@ -53,13 +62,14 @@ casesRoutes.post("/", async (c) => {
   return c.json(record, 201);
 });
 
-/** Fetch one case. Returns 200 + CaseRecord, or 404. */
+/** Fetch one of the signed-in user's cases. Someone else's case is a 404, so ids are not confirmed to strangers. */
 casesRoutes.get("/:id", async (c) => {
   const id = Id.safeParse(c.req.param("id"));
   if (!id.success) return c.json({ error: "invalid_input", issues: id.error.issues }, 400);
 
-  // TODO(B-01): also require cases.user_id = session user (return 404, not 403, to avoid leaking ids).
-  const row = await getDb(c.env.DB).query.cases.findFirst({ where: eq(schema.cases.id, id.data) });
+  const row = await getDb(c.env.DB).query.cases.findFirst({
+    where: and(eq(schema.cases.id, id.data), eq(schema.cases.userId, c.get("userId"))),
+  });
   if (!row) return c.json({ error: "not_found" }, 404);
 
   return c.json(CaseRecord.parse(row));

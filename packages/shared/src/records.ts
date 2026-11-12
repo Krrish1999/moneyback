@@ -39,13 +39,17 @@ export const CaseRecord = z.object({
 });
 export type CaseRecord = z.infer<typeof CaseRecord>;
 
-/** Body of `POST /cases`. */
+/** Largest claim the product accepts: Rs 10 crore, in paise. Web and API share this cap. */
+export const MAX_CLAIM_AMOUNT_PAISE = 10_00_00_000_00;
+
+/**
+ * Body of `POST /cases`. The owner is never part of the body: the API takes it from the session.
+ * Unknown keys (including a client-sent `userId` or `status`) are dropped.
+ */
 export const CreateCaseInput = z.object({
-  // TODO(B-01): remove once auth exists; the user id will come from the session.
-  userId: Id,
   category: CaseCategory.default("health_insurance"),
   insurer: z.string().trim().min(1).max(200),
-  claimAmountPaise: Paise,
+  claimAmountPaise: Paise.max(MAX_CLAIM_AMOUNT_PAISE),
 });
 export type CreateCaseInput = z.infer<typeof CreateCaseInput>;
 

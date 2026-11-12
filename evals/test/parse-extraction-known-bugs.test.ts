@@ -17,11 +17,11 @@ describe("parseExtraction known bugs (ai-engineer)", () => {
     expect(parseExtraction("```json\n" + good + "\n```").ok).toBe(true);
   });
 
-  it.fails("BUG-QA-1: prose containing a brace before the JSON is rejected (takes the first '{')", () => {
+  it("BUG-QA-1 (fixed 2026-11-12): prose containing a brace before the JSON is rejected (takes the first '{')", () => {
     expect(parseExtraction("Facts from {doc_1} and {doc_2} below:\n" + good).ok).toBe(true);
   });
 
-  it.fails("BUG-QA-2: only the first ``` fence is considered, even when a later ```json fence holds the answer", () => {
+  it("BUG-QA-2 (fixed 2026-11-12): only the first ``` fence is considered, even when a later ```json fence holds the answer", () => {
     expect(parseExtraction("Format:\n```\n{}\n```\nAnswer:\n```json\n" + good + "\n```").ok).toBe(true);
   });
 });

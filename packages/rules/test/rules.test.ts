@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { computeDeadlines, DeadlineConfig } from "@moneyback/shared";
 import {
@@ -12,7 +13,7 @@ import {
 } from "../src";
 import { loadRules } from "../src/node";
 
-const fixture = (name: string) => new URL(`./fixtures/${name}/`, import.meta.url).pathname;
+const fixture = (name: string) => fileURLToPath(new URL(`./fixtures/${name}/`, import.meta.url));
 
 function loadError(fn: () => unknown): RulesLoadError {
   try {

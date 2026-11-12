@@ -2,6 +2,65 @@
 
 Newest entry first. Each entry: date, what was done, contract changes, how to verify, needs from others.
 
+## 2026-11-12 · S2-03 consent + privacy screens → review (done by Claude in Kunal's desktop session)
+
+### What I built
+- **`/consent`** (`src/pages/ConsentPage.tsx`, inside `RequireAuth`): four plain points (what we collect, why, who else
+  handles it, your choice), a link to the privacy page, a checkbox and "I agree, continue". Nothing is recorded until the
+  box is ticked. On success the user goes back to where they came from (`next`, same-app paths only).
+- **Guard** `src/features/consent/RequireConsent.tsx`: `/cases/:id/upload` sits under it. A user whose
+  `consentVersion` is not the current `CONSENT_VERSION` is sent to `/consent?next=…`. Starting or viewing a case does
+  not need consent.
+- **`/privacy`** (public, linked from the footer, `data-testid="privacy-link"`): the same four points, plus
+  **Delete my data** for a signed-in user, with a second confirm step (`delete-data`, `delete-data-confirm`).
+- **API client:** `SessionUser.consentVersion`, `acceptConsent(version)`, `deleteAccount()` in `MoneyBackApi`, the HTTP
+  client and the mock. The mock starts with consent given (`createMockApi({ consented: false })` for the other case),
+  so the demo and the e2e smoke flow are unchanged.
+- **Copy:** `consent.*`, `privacy.*`, `footer.privacy` in English and Hindi. All of it is PLACEHOLDER and both pages
+  show "Draft text. This wording is not final…". The Hindi was written by the model and needs a native read.
+
+### How to verify
+```
+pnpm --filter @moneyback/web test    # 70 tests (15 new in test/consent.test.tsx)
+```
+Checked by hand on 2026-11-12: `/privacy` renders with the footer link. Not checked by hand: the consent page with a
+real signed-in user (the preview session was signed out), and `pnpm e2e` (Playwright browsers not installed).
+
+### Needs
+- **founder:** F-010. The draft does not state a retention period or a grievance contact because neither is decided.
+  When the text is approved, change it in `en.ts`/`hi.ts`, remove `consent.draftNotice`, and set a new `CONSENT_VERSION`.
+- **qa-engineer:** an e2e test for upload → consent → upload with `consented: false`.
+
+## 2026-11-12 · Web sign-in + real API client → review (done by Claude in Kunal's desktop session)
+
+### What I built
+- **HTTP client** `src/api/http.ts` (`createHttpApi`): implements `MoneyBackApi` against apps/api with
+  `credentials: "include"` and `cache: "no-store"`, validates every response with Zod, and turns failures into
+  `ApiError(status, code)` (`status 0` = network). The session is an HttpOnly cookie; the web app never sees a token.
+- **`MoneyBackApi`** gained `getMe`, `signInWithGoogle(credential)` and `signOut`. The mock implements them and starts
+  signed in as a demo user (`createMockApi({ signedIn: false })` for the signed-out case).
+- **Auth state** `src/features/auth/AuthContext.tsx` (mounted in `routes.tsx` around `Layout`), **route guard**
+  `RequireAuth` (all `cases/*` routes; signed-out visitors go to `/sign-in?next=…`, and `next` accepts only same-app
+  paths), **`/sign-in` page** with Google's own button (`GoogleButton.tsx` loads Google Identity Services), and a
+  **Sign out** button in the header.
+- **Config** `src/config.ts`: `VITE_API_URL` (empty = mock, which is what the demo and e2e use) and
+  `VITE_GOOGLE_CLIENT_ID`. See `apps/web/.env.example`.
+- New strings under `auth.*` in English and Hindi. The Hindi was written by the model and needs a native read.
+
+### How to verify
+```
+pnpm --filter @moneyback/web test    # 55 tests (22 new in test/auth.test.tsx)
+```
+Checked by hand on 2026-11-12 with both dev servers: `/cases/new` redirects to `/sign-in`, the page calls
+`GET /auth/me` on the API (401) through CORS, and shows "Sign-in is not set up yet" because no client id exists.
+Not verified: a real Google sign-in (needs F-011), and `pnpm e2e` (Playwright browsers not installed on this PC).
+`.claude/launch.json` starts both servers for the desktop app's preview.
+
+### Needs
+- **founder:** F-011. Then put the same client id in `apps/web/.env.local` as `VITE_GOOGLE_CLIENT_ID`.
+- **security-legal-reviewer:** when a Content-Security-Policy is added, it must allow `https://accounts.google.com/gsi/`
+  (script, frame, connect). The upload screen still keeps files on the device (S2-08 not started).
+
 ## 2026-11-06 · W1-07 web app shell → review
 
 ### What I built (all in `apps/web/`)

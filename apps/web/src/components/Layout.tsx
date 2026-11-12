@@ -1,9 +1,11 @@
 import { Link, Outlet } from "react-router";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../features/auth/AuthContext";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 export function Layout() {
   const { t } = useTranslation();
+  const { state, signOut } = useAuth();
   return (
     <div className="flex min-h-dvh flex-col">
       <a
@@ -18,14 +20,33 @@ export function Layout() {
             <img src="/icon.svg" alt="" width={28} height={28} className="rounded-md" />
             {t("app.name")}
           </Link>
-          <LanguageSwitch />
+          <div className="flex items-center gap-2">
+            {state.status === "signedIn" && (
+              <button
+                type="button"
+                data-testid="sign-out"
+                onClick={() => void signOut()}
+                className="min-h-11 rounded-full px-3 text-base font-medium text-brand hover:bg-brand-soft"
+              >
+                {t("auth.signOut")}
+              </button>
+            )}
+            <LanguageSwitch />
+          </div>
         </div>
       </header>
       <main id="main" tabIndex={-1} className="mx-auto w-full max-w-xl flex-1 px-4 py-6">
         <Outlet />
       </main>
       <footer className="border-t border-line">
-        <p className="mx-auto max-w-xl px-4 py-5 text-base text-muted">{t("footer.disclaimer")}</p>
+        <div className="mx-auto max-w-xl space-y-2 px-4 py-5 text-base text-muted">
+          <p>{t("footer.disclaimer")}</p>
+          <p>
+            <Link to="/privacy" data-testid="privacy-link" className="inline-flex min-h-11 items-center font-medium text-brand underline">
+              {t("footer.privacy")}
+            </Link>
+          </p>
+        </div>
       </footer>
     </div>
   );

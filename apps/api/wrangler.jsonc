@@ -4,9 +4,18 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
+  // Never expose the API on *.workers.dev (security review H-1). It is reached only through a custom domain.
+  "workers_dev": false,
+  "preview_urls": false,
   "d1_databases": [
-    { "binding": "DB", "database_name": "moneyback", "database_id": "REPLACE_AFTER_wrangler_d1_create", "migrations_dir": "migrations" }
+    { "binding": "DB", "database_name": "moneyback", "database_id": "b8a55fd5-a728-481e-90b7-f1d04a6afc77", "migrations_dir": "migrations" }
   ],
   "r2_buckets": [{ "binding": "DOCS", "bucket_name": "moneyback-docs" }],
-  "vars": { "APP_ENV": "dev" }
+  "vars": {
+    "APP_ENV": "dev",
+    // Google OAuth web client id (public). Empty = sign-in switched off (the API answers 503).
+    "GOOGLE_CLIENT_ID": "72254261543-vvklt51aq1gt6flrrs3169ed4qm8h39e.apps.googleusercontent.com",
+    // Origins of the web app allowed to call this API with cookies, comma-separated.
+    "ALLOWED_ORIGINS": "http://localhost:5173"
+  }
 }
